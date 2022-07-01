@@ -11,7 +11,7 @@ app.use(express.urlencoded({
 }));
 
 app.use("/", (request, response, next) => {
-	if (request.headers["api-key"] === process.env["API-Key"] && request.query.url) {
+	if (request.headers["api-key"] === process.env["API_KEY"] && request.query.url) {
 		next();
 	} else {
 		response.status(403).send();
